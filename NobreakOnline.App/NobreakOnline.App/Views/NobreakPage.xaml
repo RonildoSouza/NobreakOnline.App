@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NobreakOnline.App"
+             x:Class="NobreakOnline.App.Views.NobreakPage">
+
+    <ContentPage.BackgroundImage>
+        <OnPlatform x:TypeArguments="x:String">
+            <On Platform="Android" Value="MetalGrid.jpg"/>
+            <On Platform="UWP" Value="Assets/MetalGrid.jpg" />
+            <On Platform="iOS" Value="MetalGrid.jpg" />
+        </OnPlatform>
+    </ContentPage.BackgroundImage>
+
+    <Grid VerticalOptions="FillAndExpand"
+          Padding="20,0,20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView Grid.Row="0" Grid.Column="1"
+                 Color="{Binding LedIndicator}"
+                 VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="EndAndExpand"
+                 WidthRequest="30"
+                 HeightRequest="30"
+                 CornerRadius="50"/>
+
+        <Frame Grid.Row="1" Grid.ColumnSpan="2"
+               BorderColor="Black"
+               BackgroundColor="#2762AE">
+            <Grid VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                    <ColumnDefinition Width="33*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0"
+                       Source="icon.png"
+                       WidthRequest="30"
+                       HeightRequest="30"/>
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Lorem ipsum 1"
+                       FontSize="Micro"
+                       Margin="5"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabelInverse}"/>
+                <Label Grid.Row="2" Grid.Column="0"
+                       Text="{Binding ChargeStatus}"
+                       FontSize="Large"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabel}"/>
+
+                <Image Grid.Row="0" Grid.Column="1"
+                       Source="icon.png"
+                       WidthRequest="30"
+                       HeightRequest="30"/>
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="Lorem ipsum 2"
+                       FontSize="Micro"
+                       Margin="5"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabelInverse}"/>
+                <Label Grid.Row="2" Grid.Column="1"
+                       Text="{Binding NobreakChargePercent}"
+                       FontSize="30"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabel}"/>
+
+                <Image Grid.Row="0" Grid.Column="2"
+                       Source="icon.png"
+                       WidthRequest="30"
+                       HeightRequest="30"/>
+                <Label Grid.Row="1" Grid.Column="2"
+                       Text="Lorem ipsum 3"
+                       FontSize="Micro"
+                       Margin="5"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabelInverse}"/>
+                <Label Grid.Row="2" Grid.Column="2"
+                       Text="{Binding PhoneChargePercent}"
+                       FontSize="30"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabel}"/>
+
+                <Label Grid.Row="3" Grid.ColumnSpan="3"
+                       Text="{Binding MessageInfo}"
+                       FontSize="Medium"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       Style="{StaticResource DisplayLabel}"/>
+            </Grid>
+        </Frame>
+
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2"
+                     VerticalOptions="FillAndExpand">
+            <ImageButton BackgroundColor="Transparent"
+                         Source="ButtonOn.png"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand"
+                         WidthRequest="80"
+                         HeightRequest="80"
+                         CornerRadius="50">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="0.95" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </ImageButton>
+
+            <Label Text="NOBREAK ONLINE"
+                   TextColor="White"
+                   FontSize="40"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
