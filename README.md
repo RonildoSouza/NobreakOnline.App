@@ -1,10 +1,5 @@
 # NobreakOnline.App
 
-## Normal
-![1](1.jpg)
-
-## Rede de energia conectada (Carregador)
-![2](2.jpg)
-
-## Dispositivo conectado (USB)
-![3](3.jpg)
+|       Normal      |   Rede de energia conectada (Carregador)   |   Dispositivo conectado (USB)   |
+|--------------------------------|--------------------------------|--------------------------------|
+| <img src="1.jpg" width="300"/> | <img src="2.jpg" width="300"/> | <img src="3.jpg" width="300"/> |
