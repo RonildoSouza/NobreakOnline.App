@@ -49,10 +49,11 @@ namespace NobreakOnline.App.ViewModels
 
         private void Current_BatteryChanged(object sender, BatteryChangedEventArgs e)
         {
-            NobreakChargePercent = $"{e.RemainingChargePercent + 10}%";
+            var nobreakChargePercent = (e.RemainingChargePercent + 50) > 100 ? 100 : e.RemainingChargePercent + 50;
+
+            NobreakChargePercent = $"{nobreakChargePercent}%";
             PhoneChargePercent = $"{e.RemainingChargePercent}%";
             ChargeStatus = e.Status.ToString();
-
 
             if (e.Status.Equals(BatteryStatus.Charging) && !e.IsLow)
                 LedIndicator = Color.LightGreen;
@@ -62,13 +63,13 @@ namespace NobreakOnline.App.ViewModels
 
             if (e.PowerSource.Equals(PowerSource.Usb))
             {
-                MessageInfo = $"Um dispositivo foi conectado ao Nobreak Online!";
+                MessageInfo = $"Dispositivo conectado ao Nobreak Online!";
                 return;
             }
 
             if (e.PowerSource.Equals(PowerSource.Ac))
             {
-                MessageInfo = $"A sua rede de energia foi conectada ao Nobreak Online!";
+                MessageInfo = $"Rede de energia conectada ao Nobreak Online!";
                 return;
             }
 
