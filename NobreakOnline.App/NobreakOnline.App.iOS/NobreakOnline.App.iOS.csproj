@@ -161,7 +161,7 @@
     <PackageReference Include="Xam.Plugins.Notifier">
       <Version>3.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.220655" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -172,5 +172,29 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\MetalGrid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ButtonOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\DisplayLCD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MetalGrid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\NobreakBattery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PhoneBatteryOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PhoneBatteryOnInAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PhoneBatteryOnInUSB.png" />
   </ItemGroup>
 </Project>
