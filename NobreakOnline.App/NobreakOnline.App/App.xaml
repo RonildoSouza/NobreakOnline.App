@@ -7,24 +7,29 @@
             <Style x:Key="DisplayLabelFontFamily" TargetType="Label">
                 <Setter Property="FontFamily">
                     <Setter.Value>
-                        <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="Android" Value="digital-7.ttf#Digital-7" />
-                            <On Platform="iOS" Value="Digital-7" />
-                            <On Platform="UWP" Value="Assets/Fonts/digital-7.ttf#Digital-7" />
-                        </OnPlatform>
+                        <OnPlatform Android="digital-7.ttf#Digital-7" 
+                                    UWP="Assets/Fonts/digital-7.ttf#Digital-7" 
+                                    iOS="Digital-7"/>
                     </Setter.Value>
                 </Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
             </Style>
 
             <Style x:Key="DisplayLabel" TargetType="Label" BasedOn="{StaticResource DisplayLabelFontFamily}">
                 <Setter Property="TextColor" Value="#C8ECFC"/>
+                <Setter Property="FontSize" Value="30"/>
             </Style>
 
             <Style x:Key="DisplayLabelInverse" TargetType="Label" BasedOn="{StaticResource DisplayLabelFontFamily}">
                 <Setter Property="BackgroundColor" Value="#C8ECFC"/>
-                <Setter Property="TextColor" Value="#2762AE"/>
+                <Setter Property="TextColor" Value="#0500f4"/>
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+
+            <Style x:Key="DisplayImage" TargetType="Image">
+                <Setter Property="WidthRequest" Value="30"/>
+                <Setter Property="HeightRequest" Value="30"/>
             </Style>
         </ResourceDictionary>
-
     </Application.Resources>
 </Application>
